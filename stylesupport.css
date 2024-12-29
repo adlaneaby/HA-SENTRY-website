@@ -1,0 +1,194 @@
+/* General Reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Body background image */
+
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('https://raw.githubusercontent.com/adlaneaby/HA-SENTRY/main/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+}
+
+
+/* Centering containers */
+
+.login-container,
+.welcome-container,
+.password-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+
+/* Blue Blur Effect for .login-box, .welcome-box, .password-box */
+
+.login-box,
+.welcome-box,
+.password-box {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 30px 40px;
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 0 25px rgba(0, 128, 255, 0.5);
+    position: relative;
+    width: 350px;
+}
+
+
+/* Logo styling */
+
+.logo img {
+    display: block;
+    margin: 0 auto 20px;
+    width: 162px;
+    /* Set logo width */
+    height: 162px;
+    /* Set logo height */
+    object-fit: contain;
+    /* Ensures the image scales properly */
+}
+
+
+/* Input Styling */
+
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px 0;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #00aaff;
+    color: white;
+    font-size: 16px;
+    outline: none;
+}
+
+.input-group label {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    color: #ccc;
+    font-size: 16px;
+    transition: 0.3s;
+    pointer-events: none;
+}
+
+.input-group input:focus+label,
+.input-group input:valid+label {
+    top: -15px;
+    font-size: 12px;
+    color: #00aaff;
+}
+
+
+/* Button Styling */
+
+.login-button,
+.action-button {
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(90deg, #007bff, #00aaff);
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 128, 255, 0.7), 0 0 40px rgba(0, 128, 255, 0.4);
+    transition: all 0.3s ease-in-out;
+    margin-top: 20px;
+}
+
+.login-button:hover,
+.action-button:hover {
+    box-shadow: 0 0 20px rgba(0, 128, 255, 0.9), 0 0 50px rgba(0, 128, 255, 0.6);
+}
+
+
+/* Keyframe Animation for Border (Walking Effect) */
+
+@keyframes borderAnimation {
+    0% {
+        border-color: transparent;
+        box-shadow: 0 0 15px rgba(0, 128, 255, 0.8), 0 0 50px rgba(0, 128, 255, 0.5);
+    }
+    50% {
+        border-color: transparent;
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 50px rgba(255, 255, 255, 0.5);
+    }
+    100% {
+        border-color: transparent;
+        box-shadow: 0 0 15px rgba(0, 128, 255, 0.8), 0 0 50px rgba(0, 128, 255, 0.5);
+    }
+}
+
+
+/* Add border animation to boxes */
+
+.login-box,
+.welcome-box,
+.password-box {
+    animation: borderAnimation 3s infinite linear;
+}
+
+
+/* Forgot Password and Remind Me Section */
+
+.options-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.options-group .link {
+    color: rgb(0, 170, 255);
+    font-size: 14px;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.options-group .link:hover {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+.options-group .remind-me {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+}
+
+.options-group .remind-me input[type="checkbox"] {
+    accent-color: #00aaff;
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+    .container {
+        padding: 10px;
+    }
+}
